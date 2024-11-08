@@ -32,7 +32,6 @@ namespace Tyuiu.KomarovaMV.Sprint5.Task2.V9.Lib
                 str = "";
             }
             
-            
             return path;
         }
     }
