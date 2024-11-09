@@ -13,6 +13,7 @@ namespace Tyuiu.KomarovaMV.Sprint5.Task5.V29.Lib
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
+                    line = line.Replace(".",",");
                     if (((9<Convert.ToDouble(line)) & (Convert.ToDouble(line)<100)) & (Convert.ToDouble(line) < min)) { min = Convert.ToDouble(line);}
                 }
             }
