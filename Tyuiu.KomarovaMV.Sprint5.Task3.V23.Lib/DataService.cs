@@ -10,7 +10,7 @@ namespace Tyuiu.KomarovaMV.Sprint5.Task3.V23.Lib
             string path = Path.Combine(new string[] { Path.GetTempPath() , "OutPutFileTask3.bin" });
             FileInfo fileInfo = new FileInfo(path);
             if (fileInfo.Exists) { File.Delete(path); }
-            double z = Math.Round((1 + Math.Pow(x, 3) / Math.Pow(x, 2)),3);
+            double z = Math.Round(((1.0 + Math.Pow((double)x, 3)) / Math.Pow((double)x, 2)),3);
             using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
             {
                 writer.Write(BitConverter.GetBytes(z));
