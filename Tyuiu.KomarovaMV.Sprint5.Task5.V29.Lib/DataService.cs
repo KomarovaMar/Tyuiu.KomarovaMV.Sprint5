@@ -8,14 +8,12 @@ namespace Tyuiu.KomarovaMV.Sprint5.Task5.V29.Lib
         public double LoadFromDataFile(string path)
         {
             double min = 10000000000;
-            using (StreamReader sr = new StreamReader(path))
+            string str=File.ReadAllText(path);
+            str = str.Replace(".", ",");
+            string[] s=str.Split(' ');
+            foreach(string sr in s)
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    line = line.Replace(".",",");
-                    if (((9<Convert.ToDouble(line)) & (Convert.ToDouble(line)<100)) & (Convert.ToDouble(line) < min)) { min = Convert.ToDouble(line);}
-                }
+                if (((9 < Convert.ToDouble(sr)) & (Convert.ToDouble(sr) < 100)) & (Convert.ToDouble(sr) < min)) { min = Convert.ToDouble(sr); }
             }
             return Math.Round(min,3);
         }
